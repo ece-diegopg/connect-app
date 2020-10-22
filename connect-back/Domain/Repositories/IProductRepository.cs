@@ -6,7 +6,7 @@ namespace connect_back.Domain.Repositories
     public interface IProductRepository//repositorio para los productos
     {
         Task<IEnumerable<Product>> GetProductsAsync();
-        Task<Product> GetProductAsync(string userId);
+        Task<Product> GetProductByIdAsync(int userId);
         Task CreateProductAsync(Product product);
         void DeleteProduct(Product product);
         void UpdateProduct(Product product);
