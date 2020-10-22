@@ -23,14 +23,11 @@ namespace connect_back.Controllers
         [ProducesResponseType(typeof(ProductDTO), 200)]
         public async Task<IActionResult> GetProductByIdAsync(int productId)
         {
-            /*if(typeof(int) == productId.GetType()){
-                return BadRequest("here");
-            }*/
             var result = await _productService.GetProductByIdAsync(productId);
             if(!result.Success){
                 return BadRequest(result.Message);
             }
-            return Ok(result);
+            return Ok(ProductMapper.ModelToDto(result.Entity));
         }
     }
 }
