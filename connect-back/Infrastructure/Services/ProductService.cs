@@ -27,7 +27,8 @@ namespace connect_back.Infrastructure.Services{
                 ProductId = result.ProductId,
                 Code = result.Code,
                 Description = result.Description,
-                Name = result.Name
+                Name = result.Name,
+                Price = result.Price
             };
             return new ProductResponse(product);
         }
