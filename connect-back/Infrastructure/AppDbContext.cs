@@ -23,6 +23,34 @@ namespace connect_back.Infrastructure
                     Name= "Coca-cola",
                     Price = 2.5F,
                     Description="bebida gasificada con mucha azucar"
+                    },
+                new Product {
+                    ProductId=1, 
+                    Code="6901443165890",
+                    Name= "inkacola",
+                    Price = 2.2F,
+                    Description="bebida gasificada con mucha azucar"
+                    },
+                new Product {
+                    ProductId=1, 
+                    Code="6901443165891",
+                    Name= "Pepsi",
+                    Price = 2.0F,
+                    Description="bebida gasificada con mucha azucar"
+                    },
+                new Product {
+                    ProductId=1, 
+                    Code="6901443165892",
+                    Name= "Sprite",
+                    Price = 2.5F,
+                    Description="bebida gasificada con mucha azucar"
+                    },
+                new Product {
+                    ProductId=1, 
+                    Code="6901443165893",
+                    Name= "fanta",
+                    Price = 2.5F,
+                    Description="bebida gasificada con mucha azucar"
                     }
             );
 
