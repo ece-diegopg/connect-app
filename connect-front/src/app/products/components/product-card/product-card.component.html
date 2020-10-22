@@ -1,0 +1,15 @@
+<mat-card  >
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-subtitle>codigo: {{product.code}}</mat-card-subtitle>
+      <mat-card-subtitle>precio: s/.{{product.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+      {{product.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="onView(product)" mat-button>ver</button>
+    </mat-card-actions>
+  </mat-card>

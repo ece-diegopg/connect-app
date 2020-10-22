@@ -31,6 +31,15 @@ namespace connect_back
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddPolicy("CorsPolicy",//added for the signalR to work
+            builder => 
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                    //.WithOrigins("http://192.168.0.26:8080")
+                    //.AllowCredentials();
+            }));
             services.AddControllers();
             //DbConnection
             //Environment.GetEnvironmentVariable();
@@ -55,6 +64,8 @@ namespace connect_back
             app.UseRouting();
 
             app.UseAuthorization();
+            //cors 
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
