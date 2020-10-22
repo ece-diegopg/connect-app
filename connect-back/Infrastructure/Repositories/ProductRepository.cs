@@ -20,7 +20,7 @@ namespace connect_back.Infrastructure.Repositories
 		public async Task<Product> GetProductByIdAsync(int productId)
 		{
 			return await _context.Products
-								 .FirstOrDefaultAsync(p => p.ProductId == productId); // Since Include changes the method's return type, we can't use FindAsync
+								 .FirstOrDefaultAsync(p => p.ProductId == productId); 
 		}
 
 		public async Task CreateProductAsync(Product product)
