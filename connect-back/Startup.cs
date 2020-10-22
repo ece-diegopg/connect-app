@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using connect_back.Infrastructure;
 using connect_back.Infrastructure.Repositories;
 using connect_back.Domain.Repositories;
+using connect_back.Domain.Services;
+using connect_back.Infrastructure.Services;
 
 namespace connect_back
 {
@@ -32,11 +34,12 @@ namespace connect_back
             services.AddControllers();
             //DbConnection
             //Environment.GetEnvironmentVariable();
-            services.AddEntityFrameworkNpgsql().AddDbContext<AppDbContext>(opt =>
-            opt.UseNpgsql(Configuration.GetConnectionString("connect-app-connection")));
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("connect-app-connection")));
             //dependency injection
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
