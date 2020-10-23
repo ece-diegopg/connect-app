@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  Url:string = 'https://connect-backend.azurewebsites.net/products';
+  Url:string = 'https://{backend}/products';
 
   constructor(private http:HttpClient) { }
   //productos
