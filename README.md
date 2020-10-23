@@ -12,11 +12,11 @@
 ## Infranstructura
 - [Netlify](https://www.netlify.com/) (Servidor de static files-front-end).
 - [azure](https://azure.microsoft.com) (Proveedor Cloud).
-![Azure Stack](https://raw.githubusercontent.com/ece-diegopg/connect-app/master/images/azure.png)
+![Azure Stack](https://raw.githubusercontent.com/ece-diegopg/connect-app/main/imgs/azure.png)
 
 ## Probar
 Navegar a ```https://connect-app-diegopg.netlify.app/products``` para probar la app desde el navegador.
 
 Navegar a ```https://connect-backend.azurewebsites.net/swagger/index.html``` para la documentacion de la API.
 
-![API Documentation](https://raw.githubusercontent.com/ece-diegopg/connect-app/master/images/swagger.png)
+![Documentación API](https://raw.githubusercontent.com/ece-diegopg/connect-app/main/imgs/swagger.png)
