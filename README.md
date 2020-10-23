@@ -8,7 +8,7 @@
 - [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle) (Documentacion de API).
 ### FrontEnd:
 - [Angular](https://angular.io/docs) (Framework para SPAs).
-- [Angular](https://material.angular.io/guide/getting-started) (Componentes Material Design).
+- [Material](https://material.angular.io/guide/getting-started) (Componentes Material Design).
 ## Infranstructura
 - [Netlify](https://www.netlify.com/) (Servidor de static files-front-end).
 - [azure](https://azure.microsoft.com) (Proveedor Cloud).
