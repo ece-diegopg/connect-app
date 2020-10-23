@@ -8,6 +8,7 @@ using connect_back.Domain.Services;
 using connect_back.Dto;
 using connect_back.Mapper;
 using connect_back.Domain.Model;
+using Microsoft.AspNetCore.Http;
 
 namespace connect_back.Controllers
 {
@@ -21,7 +22,9 @@ namespace connect_back.Controllers
             _productService = productService;
         }
         [HttpGet("{productId}")]
-        [ProducesResponseType(typeof(ProductDTO), 200)]
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetProductByIdAsync(int productId)
         {
             var result = await _productService.GetProductByIdAsync(productId);
@@ -31,7 +34,9 @@ namespace connect_back.Controllers
             return Ok(result.Entity);
         }
         [HttpDelete("{productId}")]
-        [ProducesResponseType(typeof(ProductDTO), 200)]
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteProductAsync(int productId)
         {
             var result = await _productService.DeleteAsync(productId);
@@ -41,7 +46,8 @@ namespace connect_back.Controllers
             return Ok(result.Entity);
         }
         [HttpPost]
-        [ProducesResponseType(typeof(ProductDTO), 200)]
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateProductAsync([FromBody]Product product)
         {
             var result = await _productService.CreateAsync(product);
@@ -51,7 +57,9 @@ namespace connect_back.Controllers
             return Ok(result.Entity);
         }
         [HttpPut("{productId}")]
-        [ProducesResponseType(typeof(ProductDTO), 200)]
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateProductAsync(int productId, [FromBody]Product product)
         {
             var result = await _productService.UpdateAsync(productId,product);
@@ -61,7 +69,7 @@ namespace connect_back.Controllers
             return Ok(result.Entity);
         }
         [HttpGet]
-        [ProducesResponseType(typeof(ProductDTO), 200)]
+        [ProducesResponseType(typeof(List<ProductDTO>), 200)]
         public async Task<IActionResult> GetProductsAsync()
         {
             var result = await _productService.GetProductsAsync();
