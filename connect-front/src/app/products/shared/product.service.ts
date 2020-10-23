@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders } from '@angular/common/http'
+import {HttpClient, HttpHeaders, } from '@angular/common/http'
 import {Product} from "../../core/models/product";
 import { Observable } from 'rxjs';
 //conexion a la api
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  Url:string = 'https://localhost:5001/products';
+  Url:string = 'https://connect-backend.azurewebsites.net/products';
 
   constructor(private http:HttpClient) { }
   //productos
@@ -24,6 +24,9 @@ export class ProductService {
   }
   //eliminar producto
   DeleteProduct(productId:number):Observable<any>{
-    return this.http.delete<Product>(`${this.Url}/${productId}`);
+    let httpOptions ={
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }
+    return this.http.delete(`${this.Url}/${productId}`, httpOptions);
   }
 }

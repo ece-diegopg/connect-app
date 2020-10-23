@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/core/models/product';
 import { ProductService } from '../../shared/product.service'
@@ -10,6 +10,9 @@ import { ProductService } from '../../shared/product.service'
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  //avisa al Products(page) que se elimino un producto
+  @Output() deleteProduct: EventEmitter<Product> = new EventEmitter();
+
   product:Product;
   productId:number;
 
@@ -38,8 +41,7 @@ export class ProductComponent implements OnInit {
     if(confirm("Desea eliminar este producto?")){
       this.router.navigate(['/products'])
       this.productService.DeleteProduct(product.productId)
-      .subscribe(p => console.log(p)
-      );//p:producto
+      .subscribe();//p:producto
     }
   }
   editItem(product:Product){
