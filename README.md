@@ -14,7 +14,7 @@
 - [azure](https://azure.microsoft.com) (Proveedor Cloud).
 ![Azure Stack](https://raw.githubusercontent.com/ece-diegopg/connect-app/main/imgs/azure.png)
 
-## Probar
+## Probar/Test
 Navegar a ```https://connect-app-diegopg.netlify.app/products``` para probar la app desde el navegador.
 
 Navegar a ```https://connect-backend.azurewebsites.net/swagger/index.html``` para la documentacion de la API.
